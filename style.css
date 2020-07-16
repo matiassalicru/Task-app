@@ -1,0 +1,34 @@
+.app-container, .head-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:1px solid #454545;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 10px;
+    width:50vw
+}
+
+.head-title{
+    font-family: cursive;
+}
+
+.app-btn{
+    margin: 20px;
+}
+
+.task-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-form label{
+    align-self: flex-start;
+}
+
+.task-form, input, button{
+    margin:5px;
+}

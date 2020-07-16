@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="head-container">
+        <h2 class="head-title">Task App</h2>
+        <h4>Here you can set a list of task for your day!</h4>
+    </header>
+
+    <main class="app-container">
+        <button id='new-task' class="app-btn"></button>
+        
+        <form id='form' class="task-form">
+            <label>Task</label>
+            <input id='input-form' type="text" autocomplete="off">
+            <button type="submit" id='submit-task'></button>
+        </form>
+    
+        <div id="tasks"></div>
+    </main>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
