@@ -1,61 +1,68 @@
 
 const newTaskButton = document.getElementById('new-task');
-newTaskButton.innerText = 'New task!';
+newTaskButton.innerHTML = 'New task!';
 
-const submitTasks = document.getElementById('submit-task');
-submitTasks.innerHTML = 'Add Task';
+const addTask = document.getElementById('add-task');
+addTask.innerHTML = 'Add Task';
 
 const form = document.getElementById('form');
 
+let taskList = [];
+
 newTaskButton.addEventListener('click', openTasksForm);
 
-submitTasks.addEventListener('click', sendTask)
-
-form.style.display = 'none';
+addTask.addEventListener('click', sendTask)
 
 function openTasksForm(){
     
     if(form.style.display === 'none'){
-        form.style.display = 'block';
+        form.style.display = 'flex';
+        newTaskButton.innerHTML = 'Cancel new task';
     } else if(form.style.display != 'none'){
         form.style.display = 'none';
+        newTaskButton.innerHTML = 'New task!';
     }
-}
-
-function show() {
-    console.log(inputTask)
 }
 
 function sendTask(e) {
     e.preventDefault();
-    
-    const inputTask = document.getElementById('input-form').value;
 
-    document.getElementById('tasks').innerHTML += `
-    <p id='to-do' class='task-list'> <input id='check' type='checkbox'>  ${inputTask} </input>  </p>
-    `;
+    document.getElementById('tasks').innerHTML = ''; // Limpia el array antes de imprimirlo todo de vuelta.
 
-    document.querySelectorAll('#check').addEventListener('click', checked);
+    let inputTask = document.getElementById('input-form').value; //Guarda el input del usuario.
+
+    if (inputTask != '') {
+        
+        taskList.push(inputTask);
+        
+        taskList.forEach((item, index) => {
+            document.getElementById('tasks').innerHTML += `
+        <p id='to-do' class='task-list'> <input id='check' type='checkbox'>  ${taskList[index]} </input> </p>
+        `; 
+        });
+
+        document.querySelectorAll('#to-do').forEach((item) => {
+            item.addEventListener('change', checked)    
+        })
+
+    } else {
+        alert('First you must write a task to do!')
+    }
 }
 
+
 function checked() {
-    const task = document.getElementById('to-do');
-    if(this.checked){
-        task.style.textDecoration = 'line-through';
-        task.style.fontStyle = 'italic';
-        task.style.color = '#45454590';
-    } else {
-        task.style.textDecoration = 'none';
-        task.style.fontStyle = 'normal';
-        task.style.color = '#000';
-    }
 
+    document.querySelectorAll('#check').forEach(() => {
         
-    }
-
-function templateTask (task) {
-    return `
-        <button type='checkbox'></button>
-        <p> ${task} </p>
-    `;
+            this.style.textDecoration = 'line-through';
+            this.style.fontStyle = 'italic';
+            this.style.color = '#45454590';
+        
+            // this.style.textDecoration = 'none';
+            // this.style.fontStyle = 'normal';
+            // this.style.color = '#000';
+        }
+        
+    )    
 }

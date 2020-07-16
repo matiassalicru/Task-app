@@ -7,11 +7,18 @@
     border-radius: 15px;
     margin: auto;
     margin-bottom: 10px;
-    width:50vw
+    font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width:50vw;
 }
 
 .head-title{
-    font-family: cursive;
+    text-align: justify;
+    margin: auto
+}
+
+.head-description{
+    text-align: center;
+    margin: 20px;
 }
 
 .app-btn{
