@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task App</title>
     <link rel="stylesheet" href="./style.css">
-</head>
 <body>
     <main class="app-container">
         
         <form id='form' class="task-form">
-            <label>Task</label>
-            <input id='input-form' type="text" autocomplete="off">
-            <input id='submit-task' type="submit" >
-            <div id="msg"></div>
+            <input id='input-form' class='input-text' type="text" autocomplete="off" placeholder='Write task'>
+            <input id='submit-task' class='input-submit' type="submit" value='Add'>
         </form>
+        <div id="msg"></div>
     
         <ul id="task-list"></ul>
     </main>

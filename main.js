@@ -4,17 +4,18 @@ const errorMsg = document.querySelector('#msg'); //Error Message
 
 addTask.addEventListener("click", onSubmit);
 
-function error () {
-    errorMsg.innerHTML = '<h6 class="error"> Please complete all fields </h6>';
+function error() {
+    errorMsg.innerHTML = '<h6 class="error"> Please write a task </h6>';
 }
 
 function onSubmit(e) {
     e.preventDefault();
 
     if(inputValue.value === ''){ 
-    
-    setTimeout(error(), 3000);
-    
+        error();
+        setTimeout(() => {
+            document.querySelector('#msg').textContent='';
+        }, 2000);
     } else {
 
         const taskList = document.querySelector('#task-list');
@@ -30,7 +31,3 @@ function onSubmit(e) {
         inputValue.value = '';
     }
 }
-
-
-
-
