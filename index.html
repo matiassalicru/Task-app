@@ -7,21 +7,16 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header class="head-container">
-        <h2 class="head-title">Task App</h2>
-        <p class='head-description'>Here you can set a list of task for your day!</p>
-    </header>
-
     <main class="app-container">
-        <button id='new-task' class="app-btn"></button>
         
         <form id='form' class="task-form">
             <label>Task</label>
             <input id='input-form' type="text" autocomplete="off">
-            <button type="submit" id='add-task'></button>
+            <input id='submit-task' type="submit" >
+            <div id="msg"></div>
         </form>
     
-        <div id="tasks"></div>
+        <ul id="task-list"></ul>
     </main>
 
     <script src="main.js"></script>

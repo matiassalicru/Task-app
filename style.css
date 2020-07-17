@@ -1,41 +1,56 @@
-.app-container, .head-container{
+.app-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border:1px solid #454545;
-    border-radius: 15px;
     margin: auto;
-    margin-bottom: 10px;
     font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width:50vw;
-}
+    border: 1px solid #45454545;
+    border-radius: 10px;
 
-.head-title{
-    text-align: justify;
-    margin: auto
-}
-
-.head-description{
-    text-align: center;
-    margin: 20px;
-}
-
-.app-btn{
-    margin: 20px;
-}
-
-.task-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.task-form label{
-    align-self: flex-start;
 }
 
 .task-form, input, button{
     margin:5px;
+}
+
+input{
+    border: 1px solid #45454545;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+
+button{
+    background: none;
+    color: teal;
+    outline: none;
+    border: 1px solid #45454545;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover{
+    box-shadow: 2px 2px 4px 2px #aae3eb45;
+}
+
+.item{
+    list-style: none;
+    color: tomato;
+    cursor: pointer;
+}
+
+.item-checked{
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: tomato;
 }
