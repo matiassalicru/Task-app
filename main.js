@@ -19,14 +19,28 @@ function onSubmit(e) {
     } else {
 
         const taskList = document.querySelector('#task-list');
+
         const li = document.createElement('li');
         li.className = 'item';
 
+        const trash = document.createElement('div');
+        // trash.className = 'trash';
+
+        const listIcon = document.createElement('div');
+        listIcon.className = 'listIcon';
+
         li.addEventListener('click', () => {
             li.classList.toggle('item-checked');
+            trash.classList.toggle('trash');
         });
 
+        trash.addEventListener('click', () => {
+            li.remove();
+        });
+
+        li.appendChild(listIcon);
         li.appendChild(document.createTextNode(`${inputValue.value}`));
+        li.appendChild(trash);
         taskList.appendChild(li);
         inputValue.value = '';
     }
